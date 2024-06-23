@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        n=parseInt(prompt("Enter the num:"))
+
+        document.write("----------------------------")
+        document.write("Pattern 1<br/>")
+        for(i=0; i<=n; i++){
+            for(j=0; j<=i; j++){
+                document.write("*")
+            }
+            document.write("<br/>")
+        }
+
+        document.write("----------------------------")
+        document.write("Pattern 2</br>")
+        for(i=1; i<=n; i++){
+            for(j=1; j<=i; j++){
+                document.write(j)
+            }
+            document.write("<br/>")
+        }
+
+        document.write("----------------------------")
+        document.write("Pattern 3</br>")
+        for(i=n; i>=1; i--){
+            for(j=1; j<=i; j++){
+                document.write("*")
+            }
+            document.write("<br/>")
+        }
+
+        document.write("----------------------------")
+        document.write("Pattern 4</br>")
+        for(i=1; i<=n; i++){
+            for(j=1; j<=n; j++){
+                document.write(" *")
+            }
+            document.write("<br/>")
+        }
+
+        document.write("----------------------------")
+        document.write("Pattern 5</br>")
+        for(i=1; i<=n; i++){
+            for(j=1; j<=n; j++){
+                if(j==1 || j==n || i==1 || i==n){
+                    document.write(" A")
+                }
+                else{
+                    document.write("B ")
+                }
+            }
+            document.write("<br/>")
+        }
+
+    </script>
+</body>
+</html>
