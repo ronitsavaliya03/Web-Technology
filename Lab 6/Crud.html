@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+        <input type="text" id="txtName">
+        <input type="number" id="txtRollNo">
+        <input type="email" id="mail">
+        <input type="url" id="img"> 
+        <button onclick="addObj()" id="btn">Add</button>
+        <div id="result"></div>
+
+    <script>
+        let a=[
+            {
+                "name":"Hiren D",
+                "rollno":"123",
+                "email":"hiren123@gmail.com",
+                "avatar": "https://tse1.mm.bing.net/th?id=OIP.LsnKrkJSa8wdEgvoeDRl6wHaH0&pid=Api&P=0&h=220",
+            },
+            {
+                "name":"Rakesh R",
+                "rollno":"124",
+                "email":"rakesh124@gmail.com",
+                "avatar": "https://tse1.mm.bing.net/th?id=OIP.LsnKrkJSa8wdEgvoeDRl6wHaH0&pid=Api&P=0&h=220",
+            }
+        ];
+
+        idToEdit=-1;
+
+        function display(){
+            temp="";
+            temp+="<table border='1'>"
+                for(let i=0; i<a.length; i++){
+                    temp+="<tr>";
+                    temp+="<td>"+a[i].name+"</td>";
+                    temp+="<td>"+a[i].rollno+"</td>";
+                    temp+="<td>"+a[i].email+"</td>";
+                    temp+="<td><img src="+a[i].avatar+" style='height: 50px; width:50px'></td>"
+                    temp+="<td><button onclick='deleteObj("+i+")'>Delete</button></td>";
+                    temp+="<td><button onclick='setObj("+i+")'>Edit</button></td>";
+                    temp+="</tr>";
+
+                }
+            temp+="</table>";
+
+            document.getElementById('result').innerHTML=temp;
+        }
+
+        display();
+
+        function setObj(id){
+            idToEdit = id;
+			document.getElementById('btn').innerHTML = "Edit";
+			document.getElementById('txtName').value = students[id];
+        }
+
+        function addObj(){
+            var tempObj={
+                name: document.getElementById("txtName").value,
+                rollno: document.getElementById("txtRollNo").value,
+                email: document.getElementById("mail").value,
+                avatar:document.getElementById("img").value
+            }
+            if(idToEdit>=0){
+					a[idToEdit] = tempObj;
+					idToEdit = -1;
+					document.getElementById('btn').innerHTML = "Add";
+				}
+				else{
+					a.push(tempObj);	
+				}
+				
+            display();
+        }
+
+        function deleteObj(i){
+            a.splice(i,1);
+            display();
+        }
+
+    </script>
+</body>
+</html>
