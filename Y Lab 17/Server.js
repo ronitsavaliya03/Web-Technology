@@ -7,21 +7,21 @@ const server=http.createServer((req,res)=>{
     res.setHeader('Content-Type','text/html');
 
     if(url=='/'){
-        fs.readFile('./lab12-1.html',(err,data)=>{
+        fs.readFile('../UMS/MainPage.html',(err,data)=>{
             res.writeHead(200,'text/html');
             res.write(data);
             res.end();
         });
     }
-    else if(url=='/Demo'){
-        fs.readFile('./lab8-2.html',(err,data)=>{
+    else if(url=='/TimeTable'){
+        fs.readFile('../UMS/TimeTable.html',(err,data)=>{
             res.writeHead(200,'text/html');
             res.write(data);
             res.end();
         });
     }
-    else if(url=='/UMS'){
-        fs.readFile('./UMS/MainPage.html',(err,data)=>{
+    else if(url=='/Mentoring'){
+        fs.readFile('../UMS/Mentoring.html',(err,data)=>{
             res.writeHead(200,'text/html');
             res.write(data);
             res.end();
@@ -34,6 +34,9 @@ const server=http.createServer((req,res)=>{
     //         res.end();
     //     });
     // }
+	else{
+		res.end();
+	}
 });
 
 server.listen(7008,()=>{
