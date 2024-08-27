@@ -8,7 +8,7 @@ const bodyParser=require('body-parser');
 router.use(bodyParser.urlencoded({extended: false}));
 
 const mongoose=require('mongoose');
-const connectionString='mongodb+srv://myuser:MyUser3@cluster0.bmxuh.mongodb.net/test'
+const connectionString='mongodburl/databasename'
 mongoose.connect(connectionString)
 .then(()=>{
     console.log("Connected");
