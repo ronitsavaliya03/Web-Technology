@@ -27,8 +27,8 @@ mongoose.connect(connectionString)
 
     //Create
     router.post('/students',async(req,res)=>{
-        fac=new Student({...req.body});
-        const ans=await fac.save();
+        stu=new Student({...req.body});
+        const ans=await stu.save();
         res.send(ans);
     });
 
