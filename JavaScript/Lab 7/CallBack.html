@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #txt,#txt2{
+            font-size: larger;
+            font-weight: 600;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+    </style>
+</head>
+<body>
+    <h2>CallBack Function</h2>
+    <div id="txt">
+        
+    </div>
+    <h2>Default Parameter</h2>
+    <div id="txt2">
+
+    </div>
+    <script>
+
+        function result(some){
+            document.getElementById('txt').innerHTML=some;
+        }
+
+        function mycallback(num1,num2,mycallback){
+            let sum=num1+num2;
+            mycallback(sum);
+        }
+
+        mycallback(10,10,result);
+
+        function abc(a=3,b=9){
+            document.getElementById('txt2').innerHTML=a+b;
+        }
+
+        abc();
+
+
+        a=10;
+        console.log(a);
+
+        function scope(){
+            var a=20;
+            if(true){
+                let a=30;
+                console.log(a);
+            }
+            console.log(a);
+        }
+
+        scope();
+
+
+        //Spread Operator
+        student1={
+            name:'ronit',
+            department:'CSE',
+            collage:'DIET',
+            semester:3
+        }
+
+        student2={...student1,name:'mahir'}
+        console.log(student1);
+        console.log(student2);
+
+        array=[1.2,5.6,3,3.4,5.7,8.1,9.3];
+
+
+        //Methods        
+        answer=array.find((temp)=>{
+            if(temp>9){
+                return true;
+            }
+            else{
+                return false;
+            }
+        });
+
+        console.log(answer);
+    </script>
+</body>
+</html>
